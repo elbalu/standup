@@ -1,0 +1,38 @@
+<div class="teamScrumMaster page-header">
+	{>"inc/message" /}
+	
+	<h2>Add new team member</h2>
+
+	<form class="form-inline" role="form" method="post" action="/team/{teamName}/scrumMaster/addMember">
+	  <div class="form-group">
+
+	    <label class="sr-only" for="newTeamMember">Add Team Member</label>
+	    <input type="text" class="form-control" name="teamMemberName" id="newTeamMember" placeholder="Enter Team Member">
+	  </div>
+	  <button type="submit" class="btn btn-danger glyphicon glyphicon-plus"></button>
+	</form>
+</div>
+
+
+<h2>Teams Members</h2>
+<div class="row">
+	{#teamMemberList}
+  		<div class="col-xs-6 col-md-1">
+    		<a href="/team/{teamName}/status/{shortName}/?fn={fullName}&cl={color}" alt="{fullName}" class="thumbnail userShortName {color}">
+      			{shortName}
+    		</a>
+  		</div>
+  	{/teamMemberList}
+</div>
+<div id="scrumMemberStatusID">
+	<div class="alert alert-success">
+			<p>Type <span class="label label-danger">:good</span> to make status green <span class="label label-danger">:bad</span> to make status red <span class="label label-danger">:save</span> to save the data <span class="label label-danger">:shortname</span> (short name of team member) to go to his section.</p>
+		</div>
+<h3>Teams Members <span id="currentDate"></span></h3>
+	{#teamMemberList}
+		<div class="scrumMemberStatus {shortName}">
+			<h4>Status of {fullName} ({shortName})</h4>
+			{>"inc/teamMemberStatus" /}
+		</div>
+	{/teamMemberList}
+</div>

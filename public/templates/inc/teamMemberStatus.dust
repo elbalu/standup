@@ -1,0 +1,38 @@
+<form class="form-horizontal" role="form" method="get" action="/team/{teamName}/scrumMaster">
+		  	
+			 <input type="hidden" id="overallStatus" name="fullName" value="{fullName}" />
+
+		    <div class="form-group">
+			    <label for="yesterdayStatus" class="col-sm-1 control-label entryStatus yesterday">Y</label>
+			    <div class="col-sm-10">
+					<textarea class="form-control keyPressField" rows="3" id="yesterdayStatus" name="yesterdayStatus" placeholder="Yesterday's status"></textarea>
+			    </div>
+			 </div>
+			<div class="form-group">
+			    <label for="todayStatus" class="col-sm-1 control-label entryStatus today">T</label>
+			    <div class="col-sm-10">
+					<textarea class="form-control keyPressField" rows="3" id="todayStatus" name="todayStatus" placeholder="Today's status"></textarea>
+			    </div>
+			 </div>
+			 <div class="form-group">
+			    <label for="blockerStatus" class="col-sm-1 control-label entryStatus blocker">B</label>
+			    <div class="col-sm-10">
+					<textarea class="form-control keyPressField" rows="3" id="blockerStatus" name="blocker" placeholder="Any blockers"></textarea>
+			    </div>
+			 </div>
+			  <div class="form-group" id="overallStatusPanel">
+			    <label for="todaysStatus" class="col-sm-1 control-label entryStatus overall">O</label>
+			    <div class="col-sm-10">
+			    	<label for="todaysStatus" class="col-sm-2 control-label entryStatus good selected">Good</label>
+			    	<label for="todaysStatus" class="col-sm-2 control-label entryStatus bad">Bad</label>
+			    	<input type="hidden" id="overallStatus" name="overallStatus" value="good" />
+			    </div>
+			 </div>
+			  <div class="form-group">
+			    <label for="blockerStatus" class="col-sm-1 control-label"></label>
+			    <div class="col-sm-10">
+		  			<button type="submit" class="form-control btn btn-danger glyphicon glyphicon-plus">Submit</button>
+
+			    </div>
+			 </div>
+		</form>

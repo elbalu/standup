@@ -1,0 +1,45 @@
+#memberStatus, #scrumMemberStatusID, #teamPage {
+	.entryStatus {
+		font-size: 36px;
+		text-align: center;
+		padding: 10px;
+		&.yesterday {
+			background-color: #9b59b6;
+		}
+		&.today {
+			background-color: #1abc9c;
+		}
+		&.blocker {
+			background-color: #c0392b;
+		}
+		&.overall {
+			background-color: #2c3e50;
+		}
+		&.good {
+			background-color: #2ecc71;
+			margin-right: 30px;
+			cursor: pointer;
+		}
+		&.bad {
+			cursor: pointer;
+			background-color: #e74c3c;
+		}
+		&.selected {
+			border: 5px solid #f39c12;
+		}
+	}
+}
+
+#teamPage {
+	.col-sm-10{
+		font-size:24px; 
+	}
+	h2 {
+	margin-bottom: 30px;
+	}
+	.col-md-12 {
+		.row {
+		margin-bottom: 30px;
+		}
+	}
+}

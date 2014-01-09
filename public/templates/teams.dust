@@ -1,0 +1,30 @@
+<div id="teams">
+
+	{>"inc/message" /}
+	<div class="addTeam page-header">
+		<h2>Add new team</h2>
+		<form class="form-inline" role="form" method="post" action="/teams">
+		  <div class="form-group">
+
+		    <label class="sr-only" for="newTeam">Add Team</label>
+		    <input type="text" class="form-control" name="teamName" id="newTeam" placeholder="Enter Team">
+		    <input type="hidden" name="_csrf" value="_csrf" />
+		  </div>
+		  <button type="submit" class="btn btn-danger glyphicon glyphicon-plus"></button>
+		</form>
+
+	</div>
+	<h2>Teams</h2>
+	<div class="row">
+		{#teamList}
+	  		<div class="col-xs-6 col-md-3">
+	    		<a href="/team/{teamName}" class="thumbnail">
+	      			{teamName}
+	    		</a>
+	  		</div>
+	  	{/teamList}
+	</div>
+
+
+</div>
+

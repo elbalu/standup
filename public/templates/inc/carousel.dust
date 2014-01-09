@@ -1,0 +1,11 @@
+<div id="myCarousel" class="carousel slide">
+    <!-- Carousel items -->
+    <div class="carousel-inner">
+    <div class="active item"><img src="../../../images/standup.png"/></div>
+
+    </div>
+    <div id="infoBox">
+    	<h1>Organize, store your StandUps. Take action with DATA <a href="/teams" class="btn btn-lg btn-success">Get Started</a></h1>
+    </div>
+    </div>
+    

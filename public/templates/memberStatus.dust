@@ -1,0 +1,60 @@
+<div id="memberStatus">
+	<div class="page-header">
+		{>"inc/message" /}
+		
+		<h2>{fullName}'s status</h2>
+		<div class="alert alert-success">
+			<p>Type <span class="label label-danger">:good</span> to make status green <span class="label label-danger">:bad</span> to make status red <span class="label label-danger">:save</span> to save the data </p>
+		</div>
+		<form class="form-horizontal" role="form" method="post" action="/team/{teamName}/status/{shortName}">
+		  	<h2 id="currentDate"></h2>
+			 <input type="hidden"  name="fullName" value="{fullName}" />
+			 <input type="hidden"  name="color" value="{color}" />
+
+		    <div class="form-group">
+			    <label for="yesterdayStatus" class="col-sm-1 control-label entryStatus yesterday">Y</label>
+			    <div class="col-sm-10">
+					<textarea class="form-control keyPressField" rows="3" id="yesterdayStatus" name="yesterdayStatus" placeholder="Yesterday's status"></textarea>
+			    </div>
+			 </div>
+			<div class="form-group">
+			    <label for="todayStatus" class="col-sm-1 control-label entryStatus today">T</label>
+			    <div class="col-sm-10">
+					<textarea class="form-control keyPressField" rows="3" id="todayStatus" name="todayStatus" placeholder="Today's status"></textarea>
+			    </div>
+			 </div>
+			 <div class="form-group">
+			    <label for="blockerStatus" class="col-sm-1 control-label entryStatus blocker">B</label>
+			    <div class="col-sm-10">
+					<textarea class="form-control keyPressField" rows="3" id="blockerStatus" name="blocker" placeholder="Any blockers"></textarea>
+			    </div>
+			 </div>
+			  <div class="form-group" id="overallStatusPanel">
+			    <label for="todaysStatus" class="col-sm-1 control-label entryStatus overall">O</label>
+			    <div class="col-sm-10">
+			    	<label for="todaysStatus" class="col-sm-2 control-label entryStatus good selected">Good</label>
+			    	<label for="todaysStatus" class="col-sm-2 control-label entryStatus bad">Bad</label>
+			    	<input type="hidden" id="overallStatus" name="overallStatus" value="good" />
+			    </div>
+			 </div>
+			  <div class="form-group">
+			    <label for="blockerStatus" class="col-sm-1 control-label"></label>
+			    <div class="col-sm-10">
+		  			<button type="submit" class="form-control btn btn-danger glyphicon glyphicon-plus">Submit</button>
+
+			    </div>
+			 </div>
+		</form>
+
+	</div>
+	<h2>Previous Status</h2>
+	<div class="row">
+		{#teamMemberList}
+	  		<div class="col-xs-6 col-md-1">
+	    		<a href="/team/{teamName}/status/{shortName}" alt="{fullName}" class="thumbnail userShortName {color}">
+	      			{shortName}
+	    		</a>
+	  		</div>
+	  	{/teamMemberList}
+	</div>
+</div>

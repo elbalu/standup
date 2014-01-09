@@ -1,0 +1,15 @@
+<div id="charts">
+
+	{>"inc/message" /}
+	<div class="addTeam page-header">
+		<h2>{teamName} Chart</h2>
+		<h3>Line graph of over all status of sprints</h3>
+		<canvas id="myChart" width="800" height="450"></canvas>
+
+		<h3>Team Stand up appreance</h3>
+
+		<canvas id="standupApp" height="450" width="450"></canvas>
+	</div>
+	
+</div>
+
